@@ -1,0 +1,15 @@
+.navigation-bar{
+    background-color: #00C08B;
+    border-radius: 30px;
+    width: 199px;
+    height: 357px;
+    align-content: center;
+
+    .navigation-bar_profile, .navigation-bar_news, .navigation-bar_hierarchy,
+    .navigation-bar_group, .navigation-bar_shop{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding-left: 40%;
+    }
+}

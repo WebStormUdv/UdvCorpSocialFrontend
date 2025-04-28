@@ -1,0 +1,9 @@
+.news-feed{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .news-feed_cards_post{
+        padding: 10px 0px;
+    }
+}
