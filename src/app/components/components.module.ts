@@ -4,12 +4,18 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CardPostComponent } from './card-post/card-post.component';
 import { RouterLink } from '@angular/router';
+import { FilterNewsComponent } from './filter-news/filter-news.component';
+import { CreateCardComponent } from './create-card/create-card.component';
+import { HeaderNewsComponent } from './header-news/header-news.component';
 
 @NgModule({
     declarations: [
     HeaderComponent,
     NavigationBarComponent,
-    CardPostComponent
+    CardPostComponent,
+    FilterNewsComponent,
+    CreateCardComponent,
+    HeaderNewsComponent
   ],
     imports: [ 
       CommonModule,
@@ -18,7 +24,10 @@ import { RouterLink } from '@angular/router';
     exports: [
       HeaderComponent,
       NavigationBarComponent,
-      CardPostComponent
+      CardPostComponent,
+      FilterNewsComponent,
+      CreateCardComponent,
+      HeaderNewsComponent
     ],
     providers: [],
 })

@@ -1,9 +1,13 @@
 .news-feed{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
 
-    .news-feed_cards_post{
-        padding: 10px 0px;
+    .news-feed_cards {
+        margin-top: 20px;
+    }
+
+    .news-feed_filters {
+        margin-top: 20px;
     }
 }

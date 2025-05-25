@@ -1,18 +1,20 @@
-<section class="main_content">
-    <section class="main_content__island">
-        <section class="main_content__island__logo">
-            <img src="" class="main_content__island__img">
-            <h1 class="main_content__island">Авторизация</h1>
-        </section>
-        <section class="main_content__island__form" [formGroup]="dataUser">
-            <div>Логин</div>
-            <input type="text" class="main_content__island__login" formControlName="login">
-            <div>Пароль</div>
-            <input type="text" class="main_content__island__password" formControlName="password">
-        </section>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="form-container">
+            <h2>ЛОГО</h2>
+            <h3>Авторизация</h3>
+            <form action="#" method="post">
+                <label for="login">Логин</label>
+                <input type="text" id="login" placeholder="Введите логин..." required>
 
-        <section class="main_content__island__button_block">
-            <button class="main_content__island__button" (click)="checkForm()"><a routerLink="/news_feed">Войти</a></button>
-        </section>
-    </section>
-</section>
+                <label for="password">Пароль</label>
+                <input type="password" id="password" placeholder="Введите пароль..." required>
+                
+                <section class="button_section">
+                    <button type="submit" class="submit-btn"><a routerLink="/news_feed"></a> Войти</button>
+                </section>
+            </form>
+        </div>
+    </div>
+</body>
