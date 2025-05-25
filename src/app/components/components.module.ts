@@ -7,6 +7,7 @@ import { RouterLink } from '@angular/router';
 import { FilterNewsComponent } from './filter-news/filter-news.component';
 import { CreateCardComponent } from './create-card/create-card.component';
 import { HeaderNewsComponent } from './header-news/header-news.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { HeaderNewsComponent } from './header-news/header-news.component';
     CardPostComponent,
     FilterNewsComponent,
     CreateCardComponent,
-    HeaderNewsComponent
+    HeaderNewsComponent,
+    ProfileCardComponent
   ],
     imports: [ 
       CommonModule,
@@ -27,7 +29,8 @@ import { HeaderNewsComponent } from './header-news/header-news.component';
       CardPostComponent,
       FilterNewsComponent,
       CreateCardComponent,
-      HeaderNewsComponent
+      HeaderNewsComponent,
+      ProfileCardComponent
     ],
     providers: [],
 })

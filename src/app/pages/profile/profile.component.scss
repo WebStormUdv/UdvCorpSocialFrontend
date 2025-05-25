@@ -1,0 +1,22 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+
+    .profile_main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 400px;
+
+        .profile_card {
+            padding-top: 20px;
+        }
+
+        .profile_posts {
+            padding-top: 20px;
+        }   
+    }
+
+    
+
+}

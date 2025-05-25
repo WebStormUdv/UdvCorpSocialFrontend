@@ -4,6 +4,8 @@
     flex-direction: row;
     background-color: #00C08B;
     height: 78px;
+    position: sticky;
+    top: 0;
 
     .header_right-side{
         padding-right: 100px;

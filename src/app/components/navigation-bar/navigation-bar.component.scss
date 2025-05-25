@@ -3,6 +3,12 @@
     width: 266px;
     height: 357px;
     margin-left: 20px;
+    position: sticky;
+    top: 78px;
+
+    a {
+        font-style: none;
+    }
 
     .navigation-bar_profile, .navigation-bar_news, .navigation-bar_hierarchy,
     .navigation-bar_group, .navigation-bar_shop{
