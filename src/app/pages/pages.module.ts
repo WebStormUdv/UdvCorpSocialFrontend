@@ -6,6 +6,7 @@ import { ComponentsModule } from '../components/components.module';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { RouterLink } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
+// import { UserService } from '../services/user.service';
 
 @NgModule({
     declarations: [

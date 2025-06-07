@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { ILoginUser } from '../../interfaces/user-login.interface';
 
 @Component({
   selector: 'app-authorization',
@@ -8,16 +10,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthorizationComponent {
 
-  // public dataUser: FormGroup = new FormGroup({
-  //   login: new FormControl<string>("", Validators.required),
-  //   password: new FormControl<string>("", Validators.required)
-  // })
+  constructor(private _userService: UserService){}
 
-  // public checkForm(): void {
-  //   const DataUser = {
-  //     login: this.dataUser.controls["login"].value,
-  //     password: this.dataUser.controls["password"].value
-  //   }
-  //   console.log(DataUser)
-  // }
+  public dataUser: FormGroup = new FormGroup({
+    login: new FormControl<string>("", Validators.required),
+    password: new FormControl<string>("", Validators.required)
+  })
+
+  public checkForm(): void {
+    const userLoginData: ILoginUser = {
+      login: this.dataUser.controls["login"].value,
+      password: this.dataUser.controls["password"].value
+    }
+    this._userService.authUser(userLoginData)
+  }
 }

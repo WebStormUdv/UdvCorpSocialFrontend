@@ -1,35 +1,37 @@
+@if(userData$ | async; as userData){
 <div class="profile-card">
-    <!-- Левая часть: аватар -->
+    
+        <!-- Левая часть: аватар -->
     <div class="avatar-container">
-        <div class="avatar"></div>
+        <img class="avatar" [src]="userData.photoUrl">
         <div class="status-indicator"></div>
     </div>
 
     <!-- Правая часть: информация о пользователе -->
     <div class="user-info">
         <div class="user-details">
-            <h2>Фамилия Имя Отчество</h2>
-            <span class="office-status">В офисе</span>
+            <h2>{{userData.fullName}}</h2>
+            <span class="office-status">{{userData.workStatus}}</span>
         </div>
         <div class="user-flags">
-            <span class="flag red">Нужна помощь</span>
+            <span class="flag red">{{userData.onlineStatus}}</span>
         </div>
         <div class="user-meta">
             <div class="meta-item">
                 <span class="label">Грейд</span>
-                <span class="value">Грейд сотрудника</span>
+                <span class="value">{{userData.employmentStatus}}</span>
             </div>
             <div class="meta-item">
                 <span class="label">Должность</span>
-                <span class="value">Должность сотрудника</span>
+                <span class="value">{{userData.position}}</span>
             </div>
             <div class="meta-item">
                 <span class="label">Отдел</span>
-                <span class="value">Отдел сотрудника</span>
+                <span class="value">{{userData.subdivisionName}}</span>
             </div>
             <div class="meta-item">
                 <span class="label">Подразделение</span>
-                <span class="value">Подразделение сотрудника</span>
+                <span class="value">{{userData.subdivisionName}}</span>
             </div>
         </div>
         <button class="more-button">
@@ -48,15 +50,15 @@
     <ul>
         <li>
             <span class="contact-label">Mattermost</span>
-            <span class="contact-value">name_mattermost</span>
+            <span class="contact-value">{{userData.mattermost}}</span>
         </li>
         <li>
             <span class="contact-label">Telegram</span>
-            <span class="contact-value">tg_profile</span>
+            <span class="contact-value">{{userData.telegram}}</span>
         </li>
         <li>
             <span class="contact-label">Почта</span>
-            <span class="contact-value">pochtamail.ru</span>
+            <span class="contact-value">{{userData.email}}</span>
         </li>
     </ul>
 </div>
@@ -65,10 +67,8 @@
 <div class="projects">
     <h3>Участие в проектах</h3>
     <div class="project-list">
-        <span class="project">Проект 1</span>
-        <span class="project">Проект 2</span>
-        <span class="project">Проект 3</span>
-        <span class="project">Проект 4</span>
-        <span class="project">Проект 5</span>
+        <!-- @for(project of userData.projectNames; track name){} -->
+        <span class="project">{{userData.projectNames}}</span>
     </div>
 </div>
+}
