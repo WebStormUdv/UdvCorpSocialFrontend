@@ -28,6 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 Docker
-docker build -t UdvCorpSocialFrontend .
+docker build -t udvcorpsocialfrontend .
 
-docker run -d -p 4200:80 UdvCorpSocialFrontend
+docker run -d -p 4200:4200 --name udv-frontend udvcorpsocialfrontend
