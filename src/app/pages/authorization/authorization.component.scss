@@ -12,16 +12,15 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f8ff; /* Светло-голубой фон */
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0 0h20v20H0V0zm20 20h20v20H20v-20z" fill="%23d6eaf8"/></svg>'); /* Паттерн из треугольников */
-    background-size: 40px 40px;
+    background-image: url("../../../assets/53ac68820f602e522500943426eb608982b5073f.png"); /* Паттерн из треугольников */
 }
 
 .container {
     position: relative;
-    width: 400px;
+    width: 500px;
     height: 400px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
