@@ -15,6 +15,5 @@ export class HeaderComponent implements OnInit {
 
   public ngOnInit(): void {
     this.userData$ = this._userService.getUserData()
-    console.log(this.userData$)
   }
 }

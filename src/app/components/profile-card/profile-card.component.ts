@@ -15,8 +15,6 @@ export class ProfileCardComponent {
 
   public ngOnInit(): void {
     this.userData$ = this._userService.getUserData()
-    this.userData$?.pipe(take(1)).subscribe(result => (
-      console.log(result)
-    ))
+    this.userData$?.pipe(take(1)).subscribe()
   }
 }

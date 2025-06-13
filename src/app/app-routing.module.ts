@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { authorizationGuard } from './guards/authorization.guard';
 
 const routes: Routes = [
   {
@@ -16,11 +17,13 @@ const routes: Routes = [
   },
   {
     path: "news_feed",
-    component: NewsFeedComponent
+    component: NewsFeedComponent,
+    canActivate: [authorizationGuard]
   },
   {
     path: "profile",
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [authorizationGuard]
   },
   {
     path: "**",

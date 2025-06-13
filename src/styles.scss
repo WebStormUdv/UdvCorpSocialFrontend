@@ -1,9 +1,7 @@
 @import "../src/assets/styles/normalize.scss";
 
-
 html, body { 
     height: 100%;
+    margin: 0;
     background-color: aliceblue;
 }
-
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

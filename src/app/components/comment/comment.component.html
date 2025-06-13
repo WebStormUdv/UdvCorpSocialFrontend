@@ -1,0 +1,18 @@
+<main class="comment">
+    @if(userData$ | async; as userData){
+        <section class="comment_header">
+            <span class="comment_header_name">{{userData.fullName}}</span>
+            <span class="comment_header_position">{{userData.position}}</span>
+        </section>
+
+        <section class="comment_content">
+            <!-- <span class="comment_content">{{comment}}</span> -->
+        </section>
+
+        <section class="comment_footer">
+            <span class="comment_footer_time">Время</span>
+            <span class="comment_footer_answer">Ответить</span>
+            <img class="comment_footer_like">
+        </section>
+    }
+</main>

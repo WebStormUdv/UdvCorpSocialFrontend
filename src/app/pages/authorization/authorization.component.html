@@ -1,20 +1,24 @@
 <section class="authorization">
-    <div class="background"></div>
-    <div class="container">
+    <span class="background"></span>
+    <section class="container">
         <section class="form-container">
             <h2>ЛОГО</h2>
             <h3>Авторизация</h3>
             <form action="#" method="post" [formGroup]="dataUser">
-                <label for="login">Логин</label>
-                <input type="text" id="login" placeholder="Введите логин..." required formControlName="login">
+                <section class="authorization_login">
+                    <span for="login">Логин</span>
+                    <input type="text" id="login" placeholder="Введите логин..." required formControlName="login">
+                </section>
 
-                <label for="password">Пароль</label>
-                <input type="password" id="password" placeholder="Введите пароль..." required formControlName="password">
-                
+                <section class="authorization_password">
+                    <span for="password">Пароль</span>
+                    <input type="password" id="password" placeholder="Введите пароль..." required formControlName="password">
+                </section>
+
                 <section class="button_section">
                         <button type="submit" class="submit-btn" (click)="checkForm()">Войти</button>
                 </section>
             </form>
         </section>
-    </div>
+    </section>
 </section >

@@ -7,7 +7,7 @@ import { IUserData } from "../interfaces/user-data.interface";
 
 @Injectable()
 export class UserService {
-    protected URL: string = "http://localhost:8080"
+    public URL: string = "http://localhost:8080"
     public Token: string = ""
     public UserData$?: Observable<IUserData>;
 
@@ -23,8 +23,8 @@ export class UserService {
         this._http.post<{ token: string }>(this.URL + "/api/auth/login", Data).pipe(take(1))
         .subscribe({
             next: (result: { token: string }) => {
-                console.log(result.token)
                 this.Token = result.token
+                sessionStorage.setItem("isLoggedIn", "true")
                 this._router.navigate(["/news_feed"])
             },
             error: (error) => alert("Неправильные данные")
@@ -44,6 +44,16 @@ export class UserService {
     //Идентификатор для Guard
     isAuthenticated(): boolean {
         return sessionStorage.getItem("isLoggedIn") === "true"
+    }
+
+    //Идентификатор для админа
+    public userAdmin(): boolean {
+        const resultCheck: boolean = false 
+        this.getUserData().pipe(take(1))
+        .subscribe(result => {
+            result.workStatus === "Admin"
+        })
+        return resultCheck
     }
 
 

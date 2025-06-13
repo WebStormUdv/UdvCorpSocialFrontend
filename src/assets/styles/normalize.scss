@@ -1,5 +1,5 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
+@import "fonts.scss";
 /* Document
    ========================================================================== */
 
@@ -37,12 +37,18 @@
    * `article` contexts in Chrome, Firefox, and Safari.
    */
   
+  h2, h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+
   h1 {
-    font-family: "TRY Grtsk";
-    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
     font-size: 2em;
     margin: 0.67em 0;
   }
+
   
   /* Grouping content
      ========================================================================== */
@@ -166,8 +172,9 @@
   optgroup,
   select,
   textarea {
-    font-family: "TRY Grtsk"; /* 1 */
-    font-size: 100%; /* 1 */
+    font-family: "Inter", sans-serif;
+    font-weight: 400; /* 1 */
+    font-size: 20px; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
     color: #8A8C8C;
@@ -345,8 +352,10 @@
     display: none;
   }
   
-  span {
-    font-family: "TRY Grtsk";
+  span, p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
   }
   
   

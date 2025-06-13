@@ -8,15 +8,14 @@
         <img src="" class="header_right-side_img">
 
         <section class="header_right-side_profile">
-            <a routerLink="/profile" class="header_right-side_profile-link">
+            <section class="header_right-side_profile-link">
                 <img src="" class="header_right-side_profile-img">
                 @if(userData$ | async; as userData){
                         <h3 class="header_right-side_profile-name">
                             {{userData.fullName}}
                         </h3>
                 }
-            </a>
+            </section>
         </section>
     </section>
-
 </header>

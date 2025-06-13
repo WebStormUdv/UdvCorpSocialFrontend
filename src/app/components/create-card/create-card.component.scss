@@ -8,4 +8,14 @@
     height: 66px;
     margin-bottom: 5px;
     font-size: 20px;
+
+    .create-post_content {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        .text {
+            font-size: 20px;
+        }
+    }
 }

@@ -8,6 +8,7 @@ import { FilterNewsComponent } from './filter-news/filter-news.component';
 import { CreateCardComponent } from './create-card/create-card.component';
 import { HeaderNewsComponent } from './header-news/header-news.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
     FilterNewsComponent,
     CreateCardComponent,
     HeaderNewsComponent,
-    ProfileCardComponent
+    ProfileCardComponent,
+    CommentComponent
   ],
     imports: [ 
       CommonModule,
