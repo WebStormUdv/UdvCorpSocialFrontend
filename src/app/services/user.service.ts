@@ -8,7 +8,7 @@ import { IUserData } from "../interfaces/user-data.interface";
 @Injectable()
 export class UserService {
     public URL: string = "http://localhost:8080"
-    public Token: string = ""
+    public Token: string = sessionStorage.getItem("auth_token") || ""
     public UserData$?: Observable<IUserData>;
 
     constructor(private _http: HttpClient, private _router: Router){}
@@ -24,6 +24,7 @@ export class UserService {
         .subscribe({
             next: (result: { token: string }) => {
                 this.Token = result.token
+                sessionStorage.setItem("auth_token", this.Token)
                 sessionStorage.setItem("isLoggedIn", "true")
                 this._router.navigate(["/news_feed"])
             },

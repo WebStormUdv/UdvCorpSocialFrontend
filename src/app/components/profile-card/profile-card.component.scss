@@ -1,213 +1,201 @@
-// Переменные
-$primary-color: #2ecc71;
-$error-color: #e74c3c;
-$accent-color: #ff6b6b;
-$text-color: #333;
-$light-text: #777;
-$background: #f5f5f5;
-$card-bg: #fff;
-$border-radius: 8px;
-$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-// Миксин для кнопок
-@mixin button-style($bg-color, $text-color, $border: none) {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: $border;
-  border-radius: 4px;
-  color: $text-color;
-  background-color: $bg-color;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    opacity: 0.9;
-  }
-}
-
-// Общие стили
-body {
-  font-family: Arial, sans-serif;
-  background-color: $background;
-  margin: 0;
-  padding: 20px;
-}
-
-// Карточка профиля
 .profile-card {
-  display: flex;
-  background-color: $card-bg;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  padding: 20px;
-  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.avatar-container {
-  position: relative;
-  width: 160px;
-  height: 160px;
-
-  .avatar {
-    width: 100%;
-    height: 100%;
-    background-color: #e0e0e0;
-    border-radius: $border-radius;
-  }
-
-  .status-indicator {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: $primary-color;
-    border-radius: 50%;
-    border: 2px solid #fff;
-  }
-}
-
-.user-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  .user-details {
+  .profile-card_top {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 24px;
 
-    h2 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-  }
+    .profile-card_photo {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
 
-  .office-status {
-    background-color: $primary-color;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-  .user-flags {
-    margin-top: 10px;
+      .profile-card_gray {
+        background-color: #e0e0e0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #aaa;
+        font-size: 14px;
+      }
 
-    .flag {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 12px;
-
-      &.red {
-        background-color: $primary-color;
-        color: #fff;
+      .profile-card_status {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+        background-color: #27ae60; // зелёный (по умолчанию "онлайн")
+        border: 2px solid white;
+        border-radius: 50%;
       }
     }
-  }
 
-  .user-meta {
-    margin-top: 10px;
-
-    .meta-item {
+    .profile-card_main-information {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
+      flex-direction: column;
+      flex-grow: 1;
 
-      .label {
-        font-size: 14px;
-        color: $light-text;
+      .profile-card_main-information_FIO {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 0 8px 0;
       }
 
-      .value {
+      .profile-card_main-information_quetions-need {
         font-size: 14px;
-        font-weight: bold;
+        color: #e74c3c;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .profile-card_top_center {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 20px;
+
+        .profile-card_top_left,
+        .profile-card_top_right {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .span {
+            display: flex;
+            flex-direction: column;
+
+            .dtouched {
+              font-size: 12px;
+              color: #888;
+            }
+
+            .touched {
+              font-size: 14px;
+              font-weight: 500;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      .profile-card_top_sub-information {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        .profile-card_top_section {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .img_detali {
+            width: 18px;
+            height: 18px;
+            content: url("../../../assets/Info.png");
+          }
+
+          .profile-card_top_detali {
+            background: none;
+            border: none;
+            color: #2c3e50;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 0;
+            text-align: left;
+          }
+        }
+
+        .profile-card_top_send-loyalty {
+          background-color: #712181;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken(#712181, 10%);
+          }
+        }
       }
     }
   }
 
-  .more-button {
-    @include button-style(#fff, #333, 1px solid #ccc);
-    margin-top: 10px;
-    text-align: left;
-
-    .icon-info {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-    //   background-image: url('info-icon.svg'); // Замените на путь к вашему иконке
-      background-size: cover;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-  }
-
-  .thank-button {
-    @include button-style($accent-color, #fff);
-    margin-top: 10px;
-  }
-}
-
-// Контакты
-.contacts,
-.projects {
-  background-color: $card-bg;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  padding: 20px;
-  margin-top: 20px;
-
-  h3 {
-    margin: 0 0 10px 0;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
+  .profile-card_bottom {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    flex-direction: row;
+    gap: 40px;
 
-    .contact-label {
-      font-size: 14px;
-      color: $light-text;
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
 
-    .contact-value {
-      font-size: 14px;
-      font-weight: bold;
+    .profile-card_contact {
+      flex: 1;
+
+      .profile-card_contact_text {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #2c3e50;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        .name {
+          font-size: 14px;
+          color: #555;
+          min-width: 100px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #333;
+          margin: 0;
+        }
+      }
     }
-  }
-}
 
-// Проекты
-.projects {
-  .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    .profile-card_projects {
+      flex: 1;
 
-  .project {
-    background-color: #e9ecef;
-    color: #333;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 14px;
+      .profile-card_projects_text {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #2c3e50;
+      }
+
+      p {
+        font-size: 14px;
+        color: #333;
+        margin: 0;
+      }
+    }
   }
 }
