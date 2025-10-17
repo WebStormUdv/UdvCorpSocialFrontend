@@ -7,8 +7,8 @@ import { PagesModule } from './pages/pages.module';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { UserService } from './services/user.service';
-import { HttpClientModule } from '@angular/common/http';
-import { CommentService } from './services/posts.service';
+import { NewsService } from './services/news.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,11 @@ import { CommentService } from './services/posts.service';
     AppRoutingModule,
     PagesModule,
     ComponentsModule,
-    HttpClientModule
   ],
   providers: [
     UserService,
-    CommentService
+    NewsService,
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [
     AppComponent

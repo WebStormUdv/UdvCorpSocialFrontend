@@ -11,3 +11,12 @@
         margin-top: 20px;
     }
 }
+
+.modal_create_news {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 25%;
+    left: 31.5%;
+}

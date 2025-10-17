@@ -5,15 +5,15 @@
     </section>
 
     <section class="header_right-side">
-        <img src="" class="header_right-side_img">
+        <button class="header_right-side_button-notification"><img class="header_right-side_img"></button>
 
         <section class="header_right-side_profile">
-            <section class="header_right-side_profile-link">
+            <section class="header_right-side_profile_block">
                 <img src="" class="header_right-side_profile-img">
                 @if(userData$ | async; as userData){
-                        <h3 class="header_right-side_profile-name">
-                            {{userData.fullName}}
-                        </h3>
+                    <h3 class="header_right-side_profile-name">
+                        {{userData.fullName}}
+                    </h3>
                 }
             </section>
         </section>

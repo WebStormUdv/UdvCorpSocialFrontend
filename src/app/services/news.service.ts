@@ -4,13 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { take } from 'rxjs';
 
 @Injectable()
-export class CommentService { 
+export class NewsService { 
   public IdPosts: string = ""
   public content?: Object
 
   constructor(private _userService: UserService, private _http: HttpClient){}
 
-  //Получение постов
+  // Получение постов
   public getPost():void {
     const HttpOptions = {
       headers: new HttpHeaders({
@@ -28,8 +28,13 @@ export class CommentService {
     })
   }
   
-  //Получение комментариев к постам
+  // Получение комментариев к постам
   public getComment():void {
     this._http.get(this._userService.URL + "", )
+  }
+
+  // Сохранение поста
+  public savePost(formData: FormData) {
+    console.log(formData.get("image"))
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { IUserData } from '../../interfaces/user-data.interface';
-import { CommentService } from '../../services/posts.service';
+import { NewsService } from '../../services/news.service';
 
 @Component({
   selector: 'app-card-post',
@@ -12,7 +12,7 @@ import { CommentService } from '../../services/posts.service';
 export class CardPostComponent {
   public userData$?: Observable<IUserData>
   
-  constructor(private _userService: UserService, private _sevisePosts: CommentService){}
+  constructor(private _userService: UserService, private _sevisePosts: NewsService){}
 
   public ngOnInit(): void {
     this.userData$ = this._userService.getUserData()

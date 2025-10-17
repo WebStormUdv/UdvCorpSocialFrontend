@@ -1,0 +1,19 @@
+<section class="modal" [formGroup]="dataNews">
+    <header class="modal_header">
+        <div class="modal_header_text">Новый пост</div>
+    </header>
+
+    <main class="modal_main">
+        <input type="text" placeholder="Напишите описание поста..." class="madal_main_input-text" formControlName="text">
+        <label for="file-upload" class="file-upload-label">
+            <span class="upload-icon">+</span>
+            Добавьте фото, видео или файл
+        </label>
+        <input id="file-upload" type="file" class="madal_main_input-file" (change)="onFileSelected($event)" accept="image/*">
+    </main>
+
+    <nav class="modal_navigation">
+        <button class="modal_navigation_button-cancel" (click)="changeState()">Отмена</button>
+        <button class="modal_navigation_button-save" (click)="changeState()" (click)="onSubmit()">Опубликовать</button>
+    </nav>
+</section>

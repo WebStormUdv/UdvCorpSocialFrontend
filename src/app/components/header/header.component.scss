@@ -7,22 +7,37 @@
     position: sticky;
     top: 0;
 
-    .header_right-side{
+    .header_right-side {
         padding-right: 100px;
     }
 
-    .header_left-side{
+    .header_left-side {
         padding-left: 100px;
     }
 
-    .header_left-side, .header_right-side{
+    .header_left-side, .header_right-side {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-content: center;
         align-items: center;
 
-        .header_right-side_profile-link{
+        .header_right-side_button-notification {
+            height: 35px;
+            width: 35px;
+            border: none;
+            background-color: #00C08B;
+            margin-right: 10px;
+            
+            .header_right-side_img {
+                content: url("../../../assets/notifications.png");
+                position: relative;
+                top: -5px;
+                right: 10px;
+            }
+        }
+
+        .header_right-side_profile_block {
             display: flex;
             flex-direction: row;
             text-align: center;

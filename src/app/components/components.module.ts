@@ -9,6 +9,9 @@ import { CreateCardComponent } from './create-card/create-card.component';
 import { HeaderNewsComponent } from './header-news/header-news.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { CommentComponent } from './comment/comment.component';
+import { CreateNewsModalComponent } from './create-news-modal/create-news-modal.component';
+import { WorningCancelModalComponent } from './worning-cancel-modal/worning-cancel-modal.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -19,12 +22,16 @@ import { CommentComponent } from './comment/comment.component';
     CreateCardComponent,
     HeaderNewsComponent,
     ProfileCardComponent,
-    CommentComponent
-  ],
-    imports: [ 
-      CommonModule,
-      RouterLink
+    CommentComponent,
+    CreateNewsModalComponent,
+    WorningCancelModalComponent
     ],
+    imports: [
+    CommonModule,
+    RouterLink,
+    FormsModule,
+    ReactiveFormsModule
+],
     exports: [
       HeaderComponent,
       NavigationBarComponent,
@@ -32,7 +39,9 @@ import { CommentComponent } from './comment/comment.component';
       FilterNewsComponent,
       CreateCardComponent,
       HeaderNewsComponent,
-      ProfileCardComponent
+      ProfileCardComponent,
+      CreateNewsModalComponent,
+      WorningCancelModalComponent
     ],
     providers: [],
 })

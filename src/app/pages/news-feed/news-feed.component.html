@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header class="app-header"></app-header>
 
 <main class="news-feed">
     <section class="news-feed_navigation-bar">
@@ -6,7 +6,7 @@
     </section>
 
     <section class="news-feed_cards">
-        <app-create-card></app-create-card>
+        <app-create-card (eventChageState)="viewModalEvent($event)"></app-create-card>
         <app-header-news></app-header-news>
         <app-card-post class="news-feed_cards_post"></app-card-post>
         <app-card-post class="news-feed_cards_post"></app-card-post>
@@ -16,3 +16,5 @@
         <app-filter-news></app-filter-news>
     </section>
 </main>
+
+<app-create-news-modal class="modal_create_news" (eventChageState)="viewModalEvent($event)"></app-create-news-modal>

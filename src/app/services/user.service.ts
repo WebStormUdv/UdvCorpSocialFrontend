@@ -56,6 +56,4 @@ export class UserService {
         })
         return resultCheck
     }
-
-
 }
