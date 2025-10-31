@@ -4,37 +4,42 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { take } from 'rxjs';
 
 @Injectable()
-export class NewsService { 
-  public IdPosts: string = ""
-  public content?: Object
+export class NewsService {
+  public IdPosts: string = '';
+  public content?: Object;
 
-  constructor(private _userService: UserService, private _http: HttpClient){}
+  constructor(private _userService: UserService, private _http: HttpClient) {}
 
   // Получение постов
-  public getPost():void {
+  public getPost(): void {
     const HttpOptions = {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this._userService.Token}`
-      })
-    }
+        Authorization: `Bearer ${this._userService.Token}`,
+      }),
+    };
 
-    this._http.get<{ content: Object }>(this._userService.URL + "/api/posts", HttpOptions)
-    .pipe(take(1)).subscribe({
-      next: (result: { content: Object }) => {
-        this.content = result.content
-        console.log(this.content)
-      },
-      error: (error) => alert("Error")
-    })
+    this._http
+      .get<{ content: Object }>(
+        this._userService.URL + '/api/posts',
+        HttpOptions
+      )
+      .pipe(take(1))
+      .subscribe({
+        next: (result: { content: Object }) => {
+          this.content = result.content;
+          console.log(this.content);
+        },
+        error: (error) => alert('Error'),
+      });
   }
-  
+
   // Получение комментариев к постам
-  public getComment():void {
-    this._http.get(this._userService.URL + "", )
+  public getComment(): void {
+    this._http.get(this._userService.URL + '');
   }
 
   // Сохранение поста
   public savePost(formData: FormData) {
-    console.log(formData.get("image"))
+    console.log(formData.get('image'));
   }
 }
