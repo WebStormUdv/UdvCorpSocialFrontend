@@ -10,7 +10,7 @@ export class NewsService {
 
   constructor(private _userService: UserService, private _http: HttpClient) {}
 
-  // Получение постов
+  // Получение постов и комментариев к ним
   public getPost(): void {
     const HttpOptions = {
       headers: new HttpHeaders({

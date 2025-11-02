@@ -10,11 +10,11 @@ import { HeaderNewsComponent } from './header-news/header-news.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { CommentComponent } from './comment/comment.component';
 import { CreateNewsModalComponent } from './create-news-modal/create-news-modal.component';
-import { WorningCancelModalComponent } from './worning-cancel-modal/worning-cancel-modal.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { WarningCancelModalComponent } from './warning-cancel-modal/warning-cancel-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [
+  declarations: [
     HeaderComponent,
     NavigationBarComponent,
     CardPostComponent,
@@ -24,25 +24,20 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     ProfileCardComponent,
     CommentComponent,
     CreateNewsModalComponent,
-    WorningCancelModalComponent
-    ],
-    imports: [
-    CommonModule,
-    RouterLink,
-    FormsModule,
-    ReactiveFormsModule
-],
-    exports: [
-      HeaderComponent,
-      NavigationBarComponent,
-      CardPostComponent,
-      FilterNewsComponent,
-      CreateCardComponent,
-      HeaderNewsComponent,
-      ProfileCardComponent,
-      CreateNewsModalComponent,
-      WorningCancelModalComponent
-    ],
-    providers: [],
+    WarningCancelModalComponent,
+  ],
+  imports: [CommonModule, RouterLink, FormsModule, ReactiveFormsModule],
+  exports: [
+    HeaderComponent,
+    NavigationBarComponent,
+    CardPostComponent,
+    FilterNewsComponent,
+    CreateCardComponent,
+    HeaderNewsComponent,
+    ProfileCardComponent,
+    CreateNewsModalComponent,
+    WarningCancelModalComponent,
+  ],
+  providers: [],
 })
 export class ComponentsModule {}

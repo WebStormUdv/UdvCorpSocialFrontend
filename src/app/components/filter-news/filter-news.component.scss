@@ -1,57 +1,58 @@
 .filter {
-    font-family: Arial, sans-serif;
-    padding: 0px 20px 20px 20px;
-    position: sticky;
-    top: 100px;
+  font-family: Arial, sans-serif;
+  padding: 0px 20px 20px 20px;
+  position: sticky;
+  top: 100px;
 }
 
-.filter_news, .filter_history {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-    border-radius: 15px;
-    padding: 10px;
+.filter_news,
+.filter_history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .filter-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 input[type="radio"] {
-    display: none; /* Скрываем стандартные радиокнопки */
+  display: none;
 }
 
 .radio-button {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
 }
 
 .radio-button::before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #7b1fa2; /* Фиолетовый цвет */
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 input[type="radio"]:checked + .radio-button::before {
-    opacity: 1; /* Показываем маркер при выборе */
+  opacity: 1;
 }
 
 input[type="radio"]:checked + .radio-button {
-    border-color: #7b1fa2; /* Изменяем цвет границы при выборе */
+  border-color: black;
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { UserService } from '../../services/user.service';
-import { IUserData } from '../../interfaces/user-data.interface';
+import { IUserData } from '../../interfaces/user.interface';
 import { NewsService } from '../../services/news.service';
 
 @Component({

@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Observable } from 'rxjs';
-import { IUserData } from '../../interfaces/user-data.interface';
+import { IUserData } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
-  public userData$?: Observable<IUserData>
+  public userData$?: Observable<IUserData>;
 
-  constructor(private _userService: UserService){}
+  constructor(private _userService: UserService) {}
 
   public ngOnInit(): void {
-    this.userData$ = this._userService.getUserData()
+    this.userData$ = this._userService.getUserData();
   }
 }
