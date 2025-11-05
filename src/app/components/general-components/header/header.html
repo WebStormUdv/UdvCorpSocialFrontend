@@ -1,0 +1,23 @@
+<header class="header">
+  <section class="header_left-side">
+    <!-- <img src="" class="header_logo"> -->
+    <h1>Лого</h1>
+  </section>
+
+  <section class="header_right-side">
+    <button class="header_right-side_button-notification">
+      <img class="header_right-side_img" />
+    </button>
+
+    <section class="header_right-side_profile">
+      <section class="header_right-side_profile_block">
+        @if(userData$ | async; as userData){
+        <img src="96bb90f1e69724b62ed1e99abf10912b.jpg" class="header_right-side_profile-img" />
+        <h3 class="header_right-side_profile-name">
+          {{ userData.fullName }}
+        </h3>
+        }
+      </section>
+    </section>
+  </section>
+</header>

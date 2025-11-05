@@ -1,0 +1,88 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.authorization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff; /* Светло-голубой фон */
+  background-image: url('/53ac68820f602e522500943426eb608982b5073f.png'); /* Паттерн из треугольников */
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+span {
+  font-size: 16px;
+  text-align: start;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.authorization_login,
+.authorization_password {
+  text-align: start;
+  margin-bottom: 40px;
+}
+
+.button_section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .submit-btn {
+    width: 152px;
+    background-color: #7b1fa2; /* Фиолетовый цвет кнопки */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: #6a1c8c; /* Темнее фиолетовое при наведении */
+  }
+}

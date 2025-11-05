@@ -1,0 +1,26 @@
+.news-feed {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  .news-feed_navigation-bar {
+    margin-top: 30px;
+  }
+
+  .news-feed_cards {
+    margin-top: 30px;
+  }
+
+  .news-feed_filters {
+    margin-top: 30px;
+  }
+}
+
+.modal_create_news {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  top: 25%;
+  left: 31.5%;
+}

@@ -1,0 +1,70 @@
+.navigation-bar {
+  border-radius: 30px;
+  width: 266px;
+  height: 357px;
+  margin-left: 20px;
+  position: sticky;
+  top: 78px;
+
+  a {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-style: none;
+  }
+
+  .navigation-bar_profile,
+  .navigation-bar_news,
+  .navigation-bar_hierarchy,
+  .navigation-bar_group,
+  .navigation-bar_matric {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .navigation-bar_profile_img,
+  .navigation-bar_news_img,
+  .navigation-bar_group_img,
+  .navigation-bar_hierarchy_img,
+  .navigation-bar_matric_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1vh;
+    margin-right: 10px;
+    height: 40px;
+  }
+
+  .profile_line,
+  .profile_news_line,
+  .profile_group_line,
+  .profile_hierarchy_line,
+  .profile_matric_line {
+    width: 100%;
+    height: 1.5px;
+    background-color: none;
+    position: relative;
+    bottom: 14px;
+  }
+
+  .navigation-bar_profile_img {
+    content: url('/профиль.png');
+  }
+
+  .navigation-bar_news_img {
+    content: url('/новости.png');
+  }
+
+  .navigation-bar_group_img {
+    content: url('/сообщества.png');
+  }
+
+  .navigation-bar_hierarchy_img {
+    content: url('/список.png');
+  }
+
+  .navigation-bar_matric_img {
+    content: url('/Матрица.png');
+  }
+}

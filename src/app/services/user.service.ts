@@ -1,65 +1,34 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ILoginUser } from '../interfaces/user-login.interface';
+import { ILoginData, IUserData } from '../interfaces/user.interface';
 import { Observable, take } from 'rxjs';
-import { IUserData } from '../interfaces/user.interface';
 
 @Injectable()
 export class UserService {
-  public URL: string = 'http://localhost:8080';
-  public Token: string = sessionStorage.getItem('auth_token') || '';
-  public UserData$?: Observable<IUserData>;
+  private readonly apiUrl: string = 'http://localhost:8080';
+  protected token?: string = sessionStorage.getItem('authToken') || '';
+  constructor(protected _http: HttpClient, protected _router: Router) {}
 
-  constructor(private _http: HttpClient, private _router: Router) {}
-
-  //Проверка данных авторизации
-  public authUser(userLoginData: ILoginUser): void {
-    let Data = {
-      email: userLoginData.login,
-      password: userLoginData.password,
-    };
-
+  public authUser(userLoginData: ILoginData): void {
     this._http
-      .post<{ token: string }>(this.URL + '/api/auth/login', Data)
+      .post<{ token: string }>(this.apiUrl + '/api/auth/login', userLoginData)
       .pipe(take(1))
-      .subscribe({
-        next: (result: { token: string }) => {
-          this.Token = result.token;
-          sessionStorage.setItem('auth_token', this.Token);
-          sessionStorage.setItem('isLoggedIn', 'true');
-          this._router.navigate(['/news_feed']);
+      .subscribe(
+        (response) => {
+          sessionStorage.setItem('authToken', response['token']);
+          this._router.navigate(['/news-feed']);
         },
-        error: (error) => alert('Неправильные данные'),
-      });
+        (error) => console.error('error: ' + error)
+      );
   }
 
-  //Получение данных пользователя
-  public getUserData(): Observable<IUserData> {
+  public getUser(): Observable<IUserData> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${this.Token}`,
+        Authorization: `Bearer ${this.token}`,
       }),
     };
-    return this._http.get<IUserData>(
-      this.URL + '/api/employees/me',
-      httpOptions
-    );
-  }
-
-  //Идентификатор для Guard
-  isAuthenticated(): boolean {
-    return sessionStorage.getItem('isLoggedIn') === 'true';
-  }
-
-  //Идентификатор для админа
-  public userAdmin(): boolean {
-    const resultCheck: boolean = false;
-    this.getUserData()
-      .pipe(take(1))
-      .subscribe((result) => {
-        result.workStatus === 'Admin';
-      });
-    return resultCheck;
+    return this._http.get<IUserData>(this.apiUrl + '/api/employees/me', httpOptions);
   }
 }

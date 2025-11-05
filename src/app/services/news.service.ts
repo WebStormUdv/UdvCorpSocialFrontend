@@ -1,45 +1,8 @@
 import { Injectable } from '@angular/core';
-import { UserService } from './user.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { take } from 'rxjs';
 
 @Injectable()
 export class NewsService {
-  public IdPosts: string = '';
-  public content?: Object;
+  constructor() {}
 
-  constructor(private _userService: UserService, private _http: HttpClient) {}
-
-  // Получение постов и комментариев к ним
-  public getPost(): void {
-    const HttpOptions = {
-      headers: new HttpHeaders({
-        Authorization: `Bearer ${this._userService.Token}`,
-      }),
-    };
-
-    this._http
-      .get<{ content: Object }>(
-        this._userService.URL + '/api/posts',
-        HttpOptions
-      )
-      .pipe(take(1))
-      .subscribe({
-        next: (result: { content: Object }) => {
-          this.content = result.content;
-          console.log(this.content);
-        },
-        error: (error) => alert('Error'),
-      });
-  }
-
-  // Получение комментариев к постам
-  public getComment(): void {
-    this._http.get(this._userService.URL + '');
-  }
-
-  // Сохранение поста
-  public savePost(formData: FormData) {
-    console.log(formData.get('image'));
-  }
+  public savePost(formData: FormData): void {}
 }

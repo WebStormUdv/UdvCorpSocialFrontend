@@ -1,0 +1,17 @@
+<main class="news-feed">
+  <app-navigation-bar class="news-feed_navigation-bar"></app-navigation-bar>
+
+  <section class="news-feed_cards">
+    <app-create-news (eventChangeState)="viewModalEvent($event)"></app-create-news>
+    <app-list-news class="news-feed_cards_post"></app-list-news>
+  </section>
+
+  <section class="news-feed_filters">
+    <app-sort></app-sort>
+  </section>
+</main>
+
+<app-create-news-modal
+  class="modal_create_news"
+  (eventChangeState)="viewModalEvent($event)"
+></app-create-news-modal>

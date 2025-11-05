@@ -1,0 +1,84 @@
+.profile {
+  display: flex;
+  justify-content: row;
+  margin-top: 30px;
+
+  .profile-card {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    margin-bottom: 10px;
+
+    .profile-card_top {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .profile-card_img-container {
+        img {
+          height: 336px;
+          width: 336px;
+          border-radius: 15px;
+        }
+        div {
+          position: absolute;
+          right: 310px;
+          top: 370px;
+          height: 30px;
+          width: 30px;
+          background-color: green;
+          border-radius: 100px;
+        }
+      }
+
+      .profile-card_information {
+        display: flex;
+        flex-direction: column;
+
+        .profile-card_employee-info {
+          .profile-card_job-details-container,
+          .profile-card_employee-profile-summary-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .profile-card_job-details,
+            .profile-card_org-structure,
+            .profile-card_employee-profile-summary,
+            .profile-card_position-and-department {
+              text-align: start;
+            }
+          }
+        }
+
+        .profile-card_more-details {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          width: 140px;
+          background-color: white;
+          border: none;
+
+          .profile-card_more-details-img {
+            height: 28px;
+          }
+        }
+
+        .profile-card_gratitude {
+          border: none;
+          border-radius: 30px;
+          background-color: #712181;
+        }
+      }
+    }
+
+    .profile-card_bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
