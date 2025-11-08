@@ -1,24 +1,21 @@
 <!-- @if(userData$ | async; as userData){ -->
 <section class="card-post">
-  <div class="post-card">
-    <header class="post-header">
-      <div class="user-info">
-        <img src="96bb90f1e69724b62ed1e99abf10912b.jpg" class="avatar" />
-        <!-- <img [src]="userData.photoUrl" class="avatar" /> -->
-        <div class="user-details">
-          <p class="username">Фамилия Имя Отчество</p>
-          <p class="position">Должность</p>
-          <!-- <h3 class="username">{{ userData.fullName }}</h3> -->
-          <!-- <p class="position">{{ userData.position }}</p> -->
+  <div class="card-post_content">
+    <header class="card-post_header">
+      <div class="card-post_user">
+        <img src="96bb90f1e69724b62ed1e99abf10912b.jpg" class="card-post_avatar" />
+        <div class="card-post_user-info">
+          <p class="card-post_username">Фамилия Имя Отчество</p>
+          <p class="card-post_position">Должность</p>
         </div>
       </div>
     </header>
-    <main class="post-body">
-      <p class="post-text">
+    <main class="card-post_body">
+      <p class="card-post_text">
         Body text for your whole article or post. We'll put in some lorem ipsum to show how a
         filled-out page might look:
       </p>
-      <p class="post-text">
+      <p class="card-post_text">
         Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation
         exquisite perfect nostrud nisi intricate Content. Qui international first-class nulla ut.
         Punctual adipiscing, essential lovely queen tempor eiusmod irure. Exclusive izakaya charming
@@ -26,12 +23,30 @@
         discerning. Qui wardrobe.
       </p>
     </main>
-    <footer class="post-footer">
-      <div class="image-placeholder">
+    <footer class="card-post_footer">
+      <div class="card-post_image">
         <img src="Image.png" />
       </div>
     </footer>
   </div>
-  <div class="line"></div>
+
+  <div class="card-post_actions">
+    <div class="card-post_action-buttons">
+      <button class="card-post_action-button">
+        <img src="/favorite.png" />
+        <span>2</span>
+      </button>
+      <button class="card-post_action-button">
+        <img src="/chat_bubble.png" />
+        <span>10</span>
+      </button>
+    </div>
+    <div class="card-post_date">
+      <span>01.01.2025</span>
+      <span>20:00</span>
+    </div>
+  </div>
+
+  <div class="card-post_divider"></div>
 </section>
 <!-- } -->

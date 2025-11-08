@@ -3,31 +3,31 @@
   background-color: white;
   font-family: Arial, sans-serif;
   max-width: 912px;
-  max-height: 854px;
+  max-height: auto;
   padding: 20px;
 
-  .post-card {
-    padding: 20px;
+  .card-post_content {
+    padding: 20px 20px 0px 20px;
     margin: 0 auto;
 
-    .post-header {
+    .card-post_header {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
 
-      .user-info {
+      .card-post_user {
         display: flex;
         flex-direction: row;
 
-        .avatar {
+        .card-post_avatar {
           width: 55px;
           height: 55px;
           border-radius: 50%;
           object-fit: cover;
         }
 
-        .user-details {
+        .card-post_user-info {
           display: flex;
           flex-direction: column;
           align-content: center;
@@ -35,11 +35,11 @@
           margin-top: 10px;
           align-content: center;
 
-          .username {
+          .card-post_username {
             margin: 0;
           }
 
-          .position {
+          .card-post_position {
             font-size: 12px;
             color: #777;
             margin: 0;
@@ -48,21 +48,21 @@
       }
     }
 
-    .post-body {
+    .card-post_body {
       margin-bottom: 20px;
 
-      .post-text {
+      .card-post_text {
         font-size: 14px;
         line-height: 1.6;
         color: #333;
       }
     }
 
-    .post-footer {
+    .card-post_footer {
       display: flex;
       justify-content: center;
 
-      .image-placeholder {
+      .card-post_image-placeholder {
         width: 100%;
         background-color: #e0e0e0;
         border-radius: 5px;
@@ -70,8 +70,41 @@
       }
     }
   }
+
+  .card-post_actions {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    margin: 10px 30px;
+
+    .card-post_action-buttons {
+      display: flex;
+      flex-direction: row;
+
+      button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: white;
+        border: none;
+
+        span {
+          align-content: center;
+        }
+      }
+    }
+
+    .card-post_date {
+      align-content: center;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
-.line {
+.card-post_divider {
   border: #d5d5d5 solid 1px;
 }
