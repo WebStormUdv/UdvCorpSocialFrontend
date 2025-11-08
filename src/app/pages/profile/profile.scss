@@ -14,7 +14,7 @@
 
     .profile-card_top {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       flex-direction: row;
 
       .profile-card_img-container {
@@ -24,12 +24,12 @@
           border-radius: 15px;
         }
         div {
-          position: absolute;
-          right: 310px;
-          top: 370px;
+          position: relative;
+          left: 290px;
+          bottom: 50px;
           height: 30px;
           width: 30px;
-          background-color: green;
+          background-color: #00cf37;
           border-radius: 100px;
         }
       }
@@ -37,18 +37,57 @@
       .profile-card_information {
         display: flex;
         flex-direction: column;
+        margin-left: 2vw;
+
+        .profile-card_header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .profile-card_fio {
+          }
+
+          .profile-card_locate {
+          }
+        }
+
+        .profile-card_help {
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+
+          .profile-card_help-status {
+            position: relative;
+            left: 0px;
+            bottom: 0px;
+            border-radius: 50px;
+            height: 20px;
+            width: 20px;
+            background-color: #f83636;
+          }
+
+          .profile-card_help-text {
+            margin-left: 10px;
+          }
+        }
 
         .profile-card_employee-info {
+          margin-top: 10px;
+
           .profile-card_job-details-container,
           .profile-card_employee-profile-summary-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.8fr 1fr;
 
             .profile-card_job-details,
             .profile-card_org-structure,
             .profile-card_employee-profile-summary,
             .profile-card_position-and-department {
+              display: flex;
+              flex-direction: column;
               text-align: start;
+              margin-top: 20px;
+              gap: 4px;
             }
           }
         }
@@ -61,6 +100,7 @@
           width: 140px;
           background-color: white;
           border: none;
+          margin-top: 30px;
 
           .profile-card_more-details-img {
             height: 28px;
@@ -71,6 +111,12 @@
           border: none;
           border-radius: 30px;
           background-color: #712181;
+          margin-top: 30px;
+          max-width: 260px;
+          height: 100%;
+          max-height: 35px;
+          font-size: 18px;
+          color: white;
         }
       }
     }
