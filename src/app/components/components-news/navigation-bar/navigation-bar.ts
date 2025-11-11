@@ -32,6 +32,10 @@ export class NavigationBar {
         const profileElement = document.querySelector('.profile_line') as HTMLElement;
         if (profileElement) profileElement.style.backgroundColor = '#00c08b';
         break;
+      case '/community/list':
+        const communityElement = document.querySelector('.profile_group_line') as HTMLElement;
+        if (communityElement) communityElement.style.backgroundColor = '#00c08b';
+        break;
     }
   }
   ngOnInit(): void {

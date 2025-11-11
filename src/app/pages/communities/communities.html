@@ -1,1 +1,41 @@
-<p>communities works!</p>
+<main class="communities">
+  <app-navigation-bar></app-navigation-bar>
+  <section class="communities_block">
+    <section class="communities_block_search">
+      <img src="Search.png" />
+      <input class="communities_search" type="text" placeholder="Поиск сообществ" />
+    </section>
+
+    <div class="communities_background">
+      <div class="communities_card">
+        <img class="communities_card_img" src="загрузка.png" />
+
+        <section class="communities_card_information">
+          <span class="communities_card_title">Name Card</span>
+          <span class="communities_card_prescription">minimize prescription about group</span>
+          <span class="communities_card_user-number">5k users</span>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="communities_action-bar">
+    <button class="communities_create">Создать сообщество</button>
+
+    <section class="communities_sort">
+      <div>
+        <input type="radio" name="sort_community" />
+        <span>Мои сообщества</span>
+      </div>
+
+      <div>
+        <input type="radio" name="sort_community" />
+        <span>Рекомендуемые</span>
+      </div>
+      <div>
+        <input type="radio" name="sort_community" />
+        <span>Созданные мною</span>
+      </div>
+    </section>
+  </section>
+</main>
