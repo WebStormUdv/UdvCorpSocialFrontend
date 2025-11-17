@@ -1,6 +1,6 @@
 .news-feed {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 0.22fr;
+  display: flex;
+  justify-content: space-between;
   flex-direction: row;
 
   .news-feed_navigation-bar {

@@ -1,58 +1,73 @@
 .communities {
-  display: grid;
-  grid-template-columns: 0.4fr 1fr 0.2fr;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  // grid-template-columns: 0.5fr 1fr 0.25fr;
   margin-top: 30px;
 
   .communities_block {
     display: flex;
     flex-direction: column;
-    max-width: 914px;
+    min-width: 914px;
 
     .communities_block_search {
-      img {
-        position: absolute;
-        left: 500px;
-        top: 118px;
-      }
-
+      margin-bottom: 10px;
       .communities_search {
-        height: 5vh;
-        width: 91%;
+        height: 4vh;
+        width: 100%;
         border: none;
         border-radius: 15px;
-        margin-bottom: 10px;
         padding-left: 80px;
+        background-image: url('../../../../public/Search.png');
+        background-repeat: no-repeat;
+        background-position: 20px center;
+        background-size: 35px;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
 
-    .communities_background {
-      background-color: white;
+    .communities_card {
       border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: start;
+      padding: 14px;
+      background-color: white;
+      border: none;
+      width: 100%;
 
-      .communities_card {
+      .communities_card_img {
+        height: 103px;
+        border-radius: 50px;
+        border: 1px solid red;
+      }
+
+      .communities_card_information {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 14px;
-
-        .communities_card_img {
-          height: 103px;
-          border-radius: 50px;
-          border: 1px solid red;
-        }
-
-        .communities_card_information {
-          display: flex;
-          flex-direction: column;
-          margin-left: 17px;
-        }
+        flex-direction: column;
+        margin-left: 17px;
       }
     }
   }
 
   .communities_action-bar {
+    margin-right: 30px;
+    align-items: center;
+
     .communities_create {
       margin-bottom: 20px;
+      font-size: 16px;
+      width: 208px;
+      height: 35px;
+      border-radius: 30px;
+      border: none;
+      background-color: #712181;
+      color: white;
     }
 
     .communities_sort {
@@ -60,8 +75,29 @@
       justify-content: center;
       flex-direction: column;
       background-color: white;
-      border-radius: 4px;
+      border-radius: 10px;
       padding: 10px;
+      width: 190px;
+      gap: 15px;
+      align-content: center;
+
+      .communities_sort_block {
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+
+        input[type='radio'] {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          background-color: #000;
+          color: black;
+          background: black;
+        }
+
+        span {
+        }
+      }
     }
   }
 }

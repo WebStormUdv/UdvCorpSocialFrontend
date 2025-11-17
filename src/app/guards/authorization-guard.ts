@@ -9,6 +9,6 @@ export const authorizationGuard: CanActivateFn = (route, state) => {
   if (statusAuthorization) {
     return true;
   } else {
-    return router.createUrlTree(['/authorization']);
+    return router.navigate(['/authorization']);
   }
 };

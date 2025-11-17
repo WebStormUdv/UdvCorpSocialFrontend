@@ -1,0 +1,106 @@
+@import '../../../styles.scss';
+
+input {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+.create-community {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  // grid-template-columns: 0.4fr 1fr 0.2fr;
+  margin-top: 30px;
+
+  .create-community_block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: white;
+    min-width: 912px;
+    border-radius: 15px;
+    padding: 15px 10px 20px 10px;
+
+    .create-community_block_top {
+      @extend .create-community_block;
+      flex-direction: row;
+      background-color: white;
+      border-radius: 15px;
+
+      .create-community_input {
+        border: 2px dashed #9b9b9b;
+        border-radius: 15px;
+        width: 336px;
+        height: 336px;
+      }
+
+      .create-community_block_information {
+        .create-community_header {
+          .create-community_header_input {
+            min-width: 493px;
+            min-height: 49px;
+          }
+        }
+
+        .create-community_main {
+          .create-community_main_input {
+            min-width: 493px;
+            min-height: 197px;
+          }
+        }
+      }
+    }
+
+    .create-community_footer {
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+      margin-top: 30px;
+
+      .create-community_footer_cancel,
+      .create-community_footer_create {
+        min-width: 108px;
+        min-height: 35px;
+        font-size: 16px;
+        margin: 0px 10px;
+      }
+
+      .create-community_footer_cancel {
+        @include button-style(white-button);
+        border: 2px solid #712181;
+
+        &:hover {
+          border: 2px solid #aa7eb3;
+          color: #aa7eb3;
+        }
+
+        &:active {
+          border: 2px solid #4e1559;
+          color: #4e1559;
+        }
+      }
+
+      .create-community_footer_create {
+        @include button-style(purple-button);
+        border: 2px solid #712181;
+
+        &:hover {
+          background-color: #975fa2;
+          border: 2px solid #975fa2;
+        }
+
+        &:active {
+          background-color: #4e1559;
+          border: 2px solid #4e1559;
+        }
+      }
+    }
+  }
+}

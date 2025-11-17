@@ -1,5 +1,32 @@
 @import '../public/styles/normalize.scss';
 
+$my-buttons: (
+  purple-button: (
+    background-color: #712181,
+    color: white,
+    border-radius: 30px,
+  ),
+
+  white-button: (
+    background-color: white,
+    color: #712181,
+    border-radius: 30px,
+  ),
+);
+
+@mixin button-style($name) {
+  $styles: map-get($my-buttons, $name);
+
+  @if $styles {
+    background-color: map-get($styles, background-color);
+    color: map-get($styles, color);
+    border-radius: map-get($styles, border-radius);
+    border: map-get($styles, border, 0);
+  } @else {
+    @error "Кнопка '#{$name}' не найдена в $my-buttons";
+  }
+}
+
 html,
 body {
   height: 100%;

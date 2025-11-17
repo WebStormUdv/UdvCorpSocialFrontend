@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { NavigationBar } from '../../components/components-news/navigation-bar/navigation-bar';
+import { TypeCommunity } from '../../components/components-community/type-community/type-community';
 
 @Component({
   selector: 'app-create-community',
-  imports: [],
+  imports: [NavigationBar, TypeCommunity],
   templateUrl: './create-community.html',
   styleUrl: './create-community.scss',
 })
-export class CreateCommunity {
-
-}
+export class CreateCommunity {}

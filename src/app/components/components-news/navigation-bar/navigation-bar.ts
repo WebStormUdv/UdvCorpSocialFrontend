@@ -17,12 +17,6 @@ export class NavigationBar {
     });
   }
   private updateActiveLink(url: string): void {
-    // Reset all colors first
-    const elements = document.querySelectorAll('.profile_news_line, .profile_line');
-    elements.forEach((el: Element) => {
-      (el as HTMLElement).style.backgroundColor = '';
-    });
-    // Set active color
     switch (url) {
       case '/news-feed':
         const newsElement = document.querySelector('.profile_news_line') as HTMLElement;
@@ -33,6 +27,7 @@ export class NavigationBar {
         if (profileElement) profileElement.style.backgroundColor = '#00c08b';
         break;
       case '/community/list':
+      case '/community/create':
         const communityElement = document.querySelector('.profile_group_line') as HTMLElement;
         if (communityElement) communityElement.style.backgroundColor = '#00c08b';
         break;

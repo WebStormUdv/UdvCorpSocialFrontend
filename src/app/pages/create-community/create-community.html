@@ -1,1 +1,37 @@
-<p>create-community works!</p>
+<section class="create-community">
+  <app-navigation-bar class="navigation-bar"></app-navigation-bar>
+
+  <main class="create-community_block">
+    <section class="create-community_block_top">
+      <input class="create-community_input" type="file" />
+
+      <section class="create-community_block_information">
+        <section class="create-community_header">
+          <h3 class="create-community_header_name">Название сообщества</h3>
+          <input
+            class="create-community_header_input"
+            type="text"
+            placeholder="Введите название..."
+          />
+        </section>
+
+        <section class="create-community_main">
+          <h3 class="create-community_main_perscription">Описание сообщества</h3>
+          <input
+            class="create-community_main_input"
+            type="text"
+            placeholder="Введите описание..."
+          />
+          <span></span>
+        </section>
+      </section>
+    </section>
+
+    <footer class="create-community_footer">
+      <button class="create-community_footer_cancel">Отменить</button>
+      <button class="create-community_footer_create">Создать</button>
+    </footer>
+  </main>
+
+  <app-type-community class="type-community"></app-type-community>
+</section>

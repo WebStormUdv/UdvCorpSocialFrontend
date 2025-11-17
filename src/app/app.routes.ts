@@ -7,6 +7,8 @@ import { Profile } from './pages/profile/profile';
 import { Error } from './pages/error/error';
 import { LayoutCommunities } from './layouts/layout-communities/layout-communities';
 import { Communities } from './pages/communities/communities';
+import { CreateCommunity } from './pages/create-community/create-community';
+import { EditCommunity } from './pages/edit-community/edit-community';
 
 export const routes: Routes = [
   {
@@ -36,6 +38,14 @@ export const routes: Routes = [
       {
         path: 'list',
         component: Communities,
+      },
+      {
+        path: 'create',
+        component: CreateCommunity,
+      },
+      {
+        path: 'edit',
+        component: EditCommunity,
       },
     ],
   },
