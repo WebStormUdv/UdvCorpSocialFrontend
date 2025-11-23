@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NewsService } from '../../../services/news.service';
-import { ICreateNews } from '../../../interfaces/news.interface';
+import { ICreatePost } from '../../../interfaces/news.interface';
 
 @Component({
   selector: 'app-create-news-modal',
@@ -18,7 +18,7 @@ export class CreateNewsModal {
   public selectedFile: File | null = null;
 
   constructor(private fb: FormBuilder, private _newsService: NewsService) {
-    this.dataNews = this.fb.group<ICreateNews>({
+    this.dataNews = this.fb.group<ICreatePost>({
       text: ['', Validators.required],
       image: [null],
     });

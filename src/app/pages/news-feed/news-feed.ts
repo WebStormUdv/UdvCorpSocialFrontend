@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationBar } from '../../components/components-news/navigation-bar/navigation-bar';
 import { CreateNews } from '../../components/components-news/create/create';
 import { Sort } from '../../components/components-news/sort/sort';
 import { ListNews } from '../../components/general-components/list-news/list-news';
 import { CreateNewsModal } from '../../components/components-news/create-news-modal/create-news-modal';
+import { NewsService } from '../../services/news.service';
+import { Observable } from 'rxjs';
+import { IPosts } from '../../interfaces/news.interface';
 
 @Component({
   selector: 'app-news-feed',
   imports: [NavigationBar, CreateNews, Sort, ListNews, CreateNewsModal],
+  providers: [NewsService],
   templateUrl: './news-feed.html',
   styleUrl: './news-feed.scss',
 })
