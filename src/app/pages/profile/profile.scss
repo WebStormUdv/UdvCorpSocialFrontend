@@ -1,6 +1,6 @@
 .profile {
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 0.6fr 1fr 0.55fr;
   margin-top: 30px;
 
   .block-main {
@@ -90,7 +90,7 @@
             .profile-card_job-details-container,
             .profile-card_employee-profile-summary-container {
               display: grid;
-              grid-template-columns: 0.8fr 1fr;
+              grid-template-columns: 1.2fr 1fr;
 
               .profile-card_job-details,
               .profile-card_org-structure,
@@ -136,7 +136,7 @@
 
       .profile-card_bottom {
         display: grid;
-        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-columns: 0.43fr 0.5fr;
 
         .profile-card_contacts {
           display: flex;

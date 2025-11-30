@@ -1,19 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IPosts, IPostsResponse } from '../interfaces/news.interface';
-import { BehaviorSubject, catchError, of, take } from 'rxjs';
+import { IPosts, IPostsResponse, IUserPosts } from '../interfaces/news.interface';
+import { BehaviorSubject, catchError, Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { IUserData } from '../interfaces/user.interface';
 
 @Injectable()
 export class NewsService {
   private readonly apiUrl: string = 'http://localhost:8080';
 
   private postsSubject: BehaviorSubject<IPosts[]> = new BehaviorSubject<IPosts[]>([]);
-  public posts$ = this.postsSubject.asObservable();
+  public posts$: Observable<IPosts[]> = this.postsSubject.asObservable();
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient, private _router: Router) {}
 
-  public getPosts(): void {
-    this._http.get<IPostsResponse>(this.apiUrl + '/api/posts').subscribe({
+  public checkPath(employId?: number): void {
+    const activePath: string = this._router.url;
+    if (activePath === '/news-feed') {
+      this.getPosts();
+    } else if (activePath === '/profile') {
+      console.log(employId);
+      this.getUserPosts(employId);
+    }
+    // else if (activePath === `/community/${id}`){}
+  }
+
+  private getPosts(): void {
+    const url: string = `${this.apiUrl}/api/posts`;
+
+    this._http.get<IPostsResponse>(url).subscribe({
       next: (response) => {
         this.postsSubject.next(response.content);
       },
@@ -23,7 +38,35 @@ export class NewsService {
     });
   }
 
-  public savePost(postData: FormData) {}
+  private getUserPosts(employId?: number): void {
+    const url: string = `${this.apiUrl}/api/employees/${employId}/posts`;
+
+    this._http.get<IUserPosts>(url).subscribe({
+      next: (response) => {
+        this.postsSubject.next(response._embedded.postDtoList);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  private getCommunityPosts(communityId: number) {
+    const url: string = ``;
+  }
+
+  public savePost(postData: FormData) {
+    const url: string = `${this.apiUrl}/api/posts`;
+
+    this._http.post(url, postData).subscribe({
+      next: (response) => {
+        console.log('save post is done');
+      },
+      error: (error) => {
+        console.log('don,t save post because: ' + error);
+      },
+    });
+  }
 
   public toggleLike(post: IPosts): void {
     const url = `${this.apiUrl}/api/posts/${post.id}/likes`;
@@ -53,4 +96,6 @@ export class NewsService {
       )
       .subscribe();
   }
+
+  public filter(): void {}
 }

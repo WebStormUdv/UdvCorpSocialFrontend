@@ -3,7 +3,7 @@
 
   <section class="news-feed_cards">
     <app-create-news (eventChangeState)="viewModalEvent($event)"></app-create-news>
-    <app-list-news class="news-feed_cards_post"></app-list-news>
+    <app-list-news [posts$]="posts$" class="news-feed_cards_post"></app-list-news>
   </section>
 
   <section class="news-feed_filters">

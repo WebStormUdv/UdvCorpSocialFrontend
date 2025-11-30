@@ -24,3 +24,11 @@ export interface IPostsResponse {
   last: boolean;
   // Добавить необходимые поля
 }
+
+export interface IUserPosts {
+  page: {};
+  _embedded: {
+    postDtoList: IPosts[];
+  };
+  _links: {};
+}

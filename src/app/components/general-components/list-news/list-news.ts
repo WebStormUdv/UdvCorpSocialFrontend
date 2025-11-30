@@ -4,20 +4,15 @@ import { NewsService } from '../../../services/news.service';
 import { Observable } from 'rxjs';
 import { IPosts } from '../../../interfaces/news.interface';
 import { AsyncPipe } from '@angular/common';
+import { Comments } from '../comments/comments';
 
 @Component({
   selector: 'app-list-news',
-  imports: [NewsCard, AsyncPipe],
+  imports: [NewsCard, AsyncPipe, Comments],
   providers: [NewsService],
   templateUrl: './list-news.html',
   styleUrl: './list-news.scss',
 })
 export class ListNews {
-  public posts$!: Observable<IPosts[]>;
-
-  constructor(private _NewsService: NewsService) {
-    this._NewsService.getPosts();
-    this.posts$ = this._NewsService.posts$;
-    this._NewsService.posts$.subscribe((result) => console.log(result));
-  }
+  public readonly posts$ = input.required<Observable<IPosts[]>>();
 }

@@ -5,6 +5,7 @@
   </section>
   <div class="line"></div>
 </section>
-@if(posts$ | async; as posts){ @for(post of posts; track post.id){
+@if(posts$() | async; as posts){ @for(post of posts; track post.id){
 <app-news-card [post]="post"></app-news-card>
+<app-comments [communityId]="post.id"></app-comments>
 } }

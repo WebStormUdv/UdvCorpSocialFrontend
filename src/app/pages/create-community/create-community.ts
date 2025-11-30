@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationBar } from '../../components/components-news/navigation-bar/navigation-bar';
+import { NavigationBar } from '../../components/general-components/navigation-bar/navigation-bar';
 import { TypeCommunity } from '../../components/components-community/type-community/type-community';
 
 @Component({
