@@ -14,5 +14,12 @@ import { Comments } from '../comments/comments';
   styleUrl: './list-news.scss',
 })
 export class ListNews {
+  public stateSearch: boolean = false;
+
   public readonly posts$ = input.required<Observable<IPosts[]>>();
+
+  public searchModule(): void {
+    if (this.stateSearch === false) this.stateSearch = true;
+    else this.stateSearch = false;
+  }
 }

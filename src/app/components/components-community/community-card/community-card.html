@@ -1,0 +1,13 @@
+<button class="communities_card" (click)="redirectInCommunity()">
+  <img
+    class="communities_card_img"
+    [src]="community().photoUrl"
+    (error)="community().photoUrl = 'загрузка.png'"
+  />
+
+  <section class="communities_card_information">
+    <span class="communities_card_title">{{ community().name }}</span>
+    <span class="communities_card_prescription">{{ community().description }}</span>
+    <span class="communities_card_user-number">{{ community().type }}</span>
+  </section>
+</button>

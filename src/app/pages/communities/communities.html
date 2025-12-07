@@ -4,34 +4,27 @@
     <section class="communities_block_search">
       <input class="communities_search" type="text" placeholder="Поиск сообществ" />
     </section>
-
-    <button class="communities_card" (click)="moveCommunity()">
-      <img class="communities_card_img" src="загрузка.png" />
-
-      <section class="communities_card_information">
-        <span class="communities_card_title">Name Card</span>
-        <span class="communities_card_prescription">Minimize prescription about group</span>
-        <span class="communities_card_user-number">5k users</span>
-      </section>
-    </button>
+    @if(communities$ | async; as communities){ @for(community of communities; track community.id ){
+    <app-community-card [community]="community"></app-community-card>
+    } }
   </section>
 
   <section class="communities_action-bar">
     <button class="communities_create" (click)="moveCreateCommunity()">Создать сообщество</button>
 
-    <section class="communities_sort">
+    <section class="communities_sort" [formGroup]="sortForm" (change)="getFilterOption()">
       <div class="communities_sort_block">
-        <input type="radio" name="sort_community" />
+        <input type="radio" name="sortOption" formControlName="sortOption" value="my" />
         <span>Мои сообщества</span>
       </div>
 
       <div class="communities_sort_block">
-        <input type="radio" name="sort_community" />
+        <input type="radio" name="sortOption" formControlName="sortOption" value="recommended" />
         <span>Рекомендуемые</span>
       </div>
 
       <div class="communities_sort_block">
-        <input type="radio" name="sort_community" />
+        <input type="radio" name="sortOption" formControlName="sortOption" value="created" />
         <span>Созданные мною</span>
       </div>
     </section>

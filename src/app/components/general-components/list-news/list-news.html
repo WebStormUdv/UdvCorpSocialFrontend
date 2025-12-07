@@ -1,7 +1,12 @@
 <section class="header-news">
   <section class="header-news_content">
     <h1 class="header-news_content_text text">Посты</h1>
-    <img src="Search.png" />
+    <section class="header-news_search">
+      @if(stateSearch === true){
+      <input type="text" class="header-news_input" />
+      } @else{}
+      <img src="Search.png" (click)="searchModule()" />
+    </section>
   </section>
   <div class="line"></div>
 </section>

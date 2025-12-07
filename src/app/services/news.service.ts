@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPosts, IPostsResponse, IUserPosts } from '../interfaces/news.interface';
-import { BehaviorSubject, catchError, Observable, of } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of, take } from 'rxjs';
 import { Router } from '@angular/router';
-import { IUserData } from '../interfaces/user.interface';
 
 @Injectable()
 export class NewsService {
@@ -19,8 +18,7 @@ export class NewsService {
     if (activePath === '/news-feed') {
       this.getPosts();
     } else if (activePath === '/profile') {
-      console.log(employId);
-      this.getUserPosts(employId);
+      this.getMyPosts();
     }
     // else if (activePath === `/community/${id}`){}
   }
@@ -34,6 +32,19 @@ export class NewsService {
       },
       error: (error) => {
         console.error('Bad get status', error);
+      },
+    });
+  }
+
+  private getMyPosts(): void {
+    const url: string = `${this.apiUrl}/api/employees/mine/posts`;
+
+    this._http.get<IUserPosts>(url).subscribe({
+      next: (response) => {
+        this.postsSubject.next(response._embedded.postDtoList);
+      },
+      error: (error) => {
+        console.log(error);
       },
     });
   }
@@ -69,7 +80,7 @@ export class NewsService {
   }
 
   public toggleLike(post: IPosts): void {
-    const url = `${this.apiUrl}/api/posts/${post.id}/likes`;
+    const url: string = `${this.apiUrl}/api/posts/${post.id}/likes`;
 
     const updatedPosts = this.postsSubject.value.map((p) =>
       p.id === post.id
@@ -97,5 +108,30 @@ export class NewsService {
       .subscribe();
   }
 
-  public filter(): void {}
+  public filterListNews(filterOption: string): void {
+    if (filterOption === 'all') {
+      this.getPosts();
+    } else if (filterOption === 'my') {
+      this.getMyPosts();
+    } else {
+      this.getPosts();
+    }
+  }
+
+  public sortListNews(sortOption: string): void {
+    const currentPosts: IPosts[] = [...this.postsSubject.value];
+
+    const sortedPosts = currentPosts.sort((a, b) => {
+      const timestampA = new Date(a.timestamp).getTime();
+      const timestampB = new Date(b.timestamp).getTime();
+
+      if (sortOption === 'new') {
+        return timestampB - timestampA;
+      } else {
+        return timestampA - timestampB;
+      }
+    });
+
+    this.postsSubject.next(sortedPosts);
+  }
 }

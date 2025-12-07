@@ -9,6 +9,7 @@ import { LayoutCommunities } from './layouts/layout-communities/layout-communiti
 import { Communities } from './pages/communities/communities';
 import { CreateCommunity } from './pages/create-community/create-community';
 import { EditCommunity } from './pages/edit-community/edit-community';
+import { Community } from './pages/community/community';
 
 export const routes: Routes = [
   {
@@ -46,6 +47,10 @@ export const routes: Routes = [
       {
         path: 'edit',
         component: EditCommunity,
+      },
+      {
+        path: ':id',
+        component: Community,
       },
     ],
   },

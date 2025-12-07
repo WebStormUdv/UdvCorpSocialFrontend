@@ -29,30 +29,6 @@
         }
       }
     }
-
-    .communities_card {
-      border-radius: 15px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      text-align: start;
-      padding: 14px;
-      background-color: white;
-      border: none;
-      width: 100%;
-
-      .communities_card_img {
-        height: 103px;
-        border-radius: 50px;
-        border: 1px solid red;
-      }
-
-      .communities_card_information {
-        display: flex;
-        flex-direction: column;
-        margin-left: 17px;
-      }
-    }
   }
 
   .communities_action-bar {

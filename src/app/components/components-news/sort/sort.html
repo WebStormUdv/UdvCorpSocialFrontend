@@ -1,33 +1,33 @@
 <section class="sort">
-  <section class="sort_news">
+  <section class="sort_news" [formGroup]="filterOption" (change)="filterListNews()">
     <label class="sort-item">
-      <input type="radio" name="sort" value="all-news" />
+      <input type="radio" name="currentNews" value="all" formControlName="currentNews" />
       <span class="radio-button"></span>
       Все новости
     </label>
 
     <label class="sort-item">
-      <input type="radio" name="sort" value="my-news" />
+      <input type="radio" name="currentNews" value="my" formControlName="currentNews" />
       <span class="radio-button"></span>
       Мои новости
     </label>
 
     <label class="sort-item">
-      <input type="radio" name="sort" value="company-news" checked />
+      <input type="radio" name="currentNews" value="company" formControlName="currentNews" />
       <span class="radio-button"></span>
       Новости компании
     </label>
   </section>
 
-  <section class="sort_history">
+  <section class="sort_history" [formGroup]="sortOption" (change)="sortListNews()">
     <label class="sort-item">
-      <input type="radio" name="sort_time" value="new-first" />
+      <input type="radio" name="timeNews" value="new" formControlName="timeNews" />
       <span class="radio-button"></span>
       Сначала новые
     </label>
 
     <label class="sort-item">
-      <input type="radio" name="sort_time" value="old-first" checked />
+      <input type="radio" name="timeNews" value="old" formControlName="timeNews" />
       <span class="radio-button"></span>
       Сначала старые
     </label>
