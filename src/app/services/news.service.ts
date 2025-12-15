@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IPosts, IPostsResponse, IUserPosts } from '../interfaces/news.interface';
+import { ICommunityPosts, IPosts, IPostsResponse, IUserPosts } from '../interfaces/news.interface';
 import { BehaviorSubject, catchError, map, Observable, of, take } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -19,8 +19,11 @@ export class NewsService {
       this.getPosts();
     } else if (activePath === '/profile') {
       this.getMyPosts();
+    } else if (activePath === `/community/${employId}`) {
+      if (employId !== undefined) {
+        this.getCommunityPosts(employId);
+      }
     }
-    // else if (activePath === `/community/${id}`){}
   }
 
   private getPosts(): void {
@@ -49,21 +52,28 @@ export class NewsService {
     });
   }
 
-  private getUserPosts(employId?: number): void {
-    const url: string = `${this.apiUrl}/api/employees/${employId}/posts`;
+  // private getUserPosts(employId?: number): void {
+  //   const url: string = `${this.apiUrl}/api/employees/${employId}/posts`;
 
-    this._http.get<IUserPosts>(url).subscribe({
+  //   this._http.get<IUserPosts>(url).subscribe({
+  //     next: (response) => {
+  //       this.postsSubject.next(response._embedded.postDtoList);
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     },
+  //   });
+  // }
+
+  private getCommunityPosts(communityId: number) {
+    const url: string = `${this.apiUrl}/api/communities/${communityId}/posts`;
+
+    this._http.get<ICommunityPosts>(url).subscribe({
       next: (response) => {
         this.postsSubject.next(response._embedded.postDtoList);
       },
-      error: (error) => {
-        console.log(error);
-      },
+      error: (error) => {},
     });
-  }
-
-  private getCommunityPosts(communityId: number) {
-    const url: string = ``;
   }
 
   public savePost(postData: FormData) {

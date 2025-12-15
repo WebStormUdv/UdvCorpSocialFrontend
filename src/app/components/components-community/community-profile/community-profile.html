@@ -1,1 +1,15 @@
-<p>community-profile works!</p>
+@if(communityData$ | async; as communityData){
+
+<section class="community-profile">
+  <section class="community-profile_img">
+    <img [src]="communityData.photoUrl" (error)="communityData.photoUrl = 'загрузка.png'" />
+  </section>
+  <main class="community-profile_content">
+    <h1 class="content_name">{{ communityData.name }}</h1>
+    <p class="content_description">{{ communityData.description }}</p>
+    <section class="content_buttons">
+      <button>Вы подписаны</button>
+    </section>
+  </main>
+</section>
+}

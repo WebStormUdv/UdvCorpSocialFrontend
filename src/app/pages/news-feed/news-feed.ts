@@ -11,7 +11,7 @@ import { Comments } from '../../components/general-components/comments/comments'
 
 @Component({
   selector: 'app-news-feed',
-  imports: [NavigationBar, CreateNews, Sort, ListNews, CreateNewsModal, Comments],
+  imports: [NavigationBar, CreateNews, Sort, ListNews, CreateNewsModal],
   providers: [NewsService],
   templateUrl: './news-feed.html',
   styleUrl: './news-feed.scss',

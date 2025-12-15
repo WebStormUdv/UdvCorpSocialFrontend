@@ -32,3 +32,9 @@ export interface IUserPosts {
   };
   _links: {};
 }
+
+export interface ICommunityPosts {
+  page: {};
+  _embedded: { postDtoList: IPosts[] };
+  _links: {};
+}

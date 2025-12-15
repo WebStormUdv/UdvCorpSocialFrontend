@@ -42,4 +42,8 @@ export class CommunityService {
   }
 
   private getCreatedCommunities(): void {}
+
+  public getCommunityById(communityId: number): Observable<ICommunities> {
+    return this._http.get<ICommunities>(`${this.apiUrl}/api/communities/${communityId}`);
+  }
 }

@@ -1,12 +1,16 @@
 <main class="communities">
   <app-navigation-bar class="navigation-bar"></app-navigation-bar>
+
   <section class="communities_block">
     <section class="communities_block_search">
       <input class="communities_search" type="text" placeholder="Поиск сообществ" />
     </section>
-    @if(communities$ | async; as communities){ @for(community of communities; track community.id ){
-    <app-community-card [community]="community"></app-community-card>
-    } }
+    <section class="communities_background">
+      @if(communities$ | async; as communities){ @for(community of communities; track community.id
+      ){
+      <app-community-card [community]="community"></app-community-card>
+      } }
+    </section>
   </section>
 
   <section class="communities_action-bar">

@@ -1,0 +1,25 @@
+.community-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  background-color: white;
+  min-width: 911px;
+  min-height: 381px;
+  align-items: center;
+  align-content: center;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
+  .community-profile_img {
+    img {
+      min-width: 336px;
+      max-width: 336px;
+    }
+  }
+
+  .community-profile_content {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+}

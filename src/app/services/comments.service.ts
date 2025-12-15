@@ -15,7 +15,9 @@ export class CommentsService {
     const url: string = `${this.apiUrl}/api/posts/${postId}/comments`;
 
     this._http.get(url).subscribe({
-      next: (response) => {},
+      next: (response) => {
+        // console.log(response);
+      },
       error: (error) => console.log(error, sessionStorage.getItem('authToken')),
     });
   }

@@ -1,0 +1,17 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+
+  .comment_header {
+    display: flex;
+    flex-direction: row;
+
+    .header_img,
+    .header_profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+}

@@ -1,1 +1,8 @@
-<p>community works!</p>
+<section class="community">
+  <app-navigation-bar class="navigation-bar"></app-navigation-bar>
+  <main class="community_main">
+    <app-community-profile class="community-profile"></app-community-profile>
+    <app-list-news [posts$]="posts$"></app-list-news>
+  </main>
+  <app-user-list></app-user-list>
+</section>
