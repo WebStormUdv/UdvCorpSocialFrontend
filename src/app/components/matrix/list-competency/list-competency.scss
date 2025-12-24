@@ -1,0 +1,50 @@
+.list-competency {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+
+  .list-competency_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: black 1px solid;
+    padding-bottom: 10px;
+
+    .header_folders {
+      display: flex;
+      flex-direction: row;
+
+      .header_not-improved {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .not-improved_notification {
+          width: 20px;
+          height: 20px;
+          background-color: #712181;
+          color: white;
+          border-radius: 50%;
+          text-align: center;
+        }
+      }
+
+      button {
+        background-color: none;
+        border: none;
+        color: black;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .list-competency_table {
+    .table_header {
+      background-color: #f8f9fa;
+    }
+
+    .table_information {
+      background-color: white;
+    }
+  }
+}

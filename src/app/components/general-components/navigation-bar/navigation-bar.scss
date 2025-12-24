@@ -17,7 +17,7 @@
   .navigation-bar_news,
   .navigation-bar_hierarchy,
   .navigation-bar_group,
-  .navigation-bar_matric {
+  .navigation-bar_matrix {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -27,7 +27,7 @@
   .navigation-bar_news_img,
   .navigation-bar_group_img,
   .navigation-bar_hierarchy_img,
-  .navigation-bar_matric_img {
+  .navigation-bar_matrix_img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +40,7 @@
   .profile_news_line,
   .profile_group_line,
   .profile_hierarchy_line,
-  .profile_matric_line {
+  .profile_matrix_line {
     width: 100%;
     height: 2px;
     background-color: none;
@@ -64,7 +64,7 @@
     content: url('/список.png');
   }
 
-  .navigation-bar_matric_img {
+  .navigation-bar_matrix_img {
     content: url('/Матрица.png');
   }
 }

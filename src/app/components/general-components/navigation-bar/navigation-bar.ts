@@ -1,6 +1,5 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -26,11 +25,15 @@ export class NavigationBar {
         const profileElement = document.querySelector('.profile_line') as HTMLElement;
         if (profileElement) profileElement.style.backgroundColor = '#00c08b';
         break;
+      case `/community/`:
       case '/community/list':
       case '/community/create':
         const communityElement = document.querySelector('.profile_group_line') as HTMLElement;
         if (communityElement) communityElement.style.backgroundColor = '#00c08b';
         break;
+      case '/matrix/competency':
+        const matrixElement = document.querySelector('.profile_matrix_line') as HTMLElement;
+        if (matrixElement) matrixElement.style.backgroundColor = '#00c08b';
     }
   }
   ngOnInit(): void {

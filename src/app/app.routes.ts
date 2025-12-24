@@ -10,6 +10,8 @@ import { Communities } from './pages/communities/communities';
 import { CreateCommunity } from './pages/create-community/create-community';
 import { EditCommunity } from './pages/edit-community/edit-community';
 import { Community } from './pages/community/community';
+import { LayoutMatrix } from './layouts/layout-matrix/layout-matrix';
+import { MatrixCompetency } from './pages/matrix-competency/matrix-competency';
 
 export const routes: Routes = [
   {
@@ -51,6 +53,22 @@ export const routes: Routes = [
       {
         path: ':id',
         component: Community,
+      },
+    ],
+  },
+  {
+    path: 'matrix',
+    component: LayoutMatrix,
+    canActivate: [authorizationGuard],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'competency',
+      },
+      {
+        path: 'competency',
+        component: MatrixCompetency,
       },
     ],
   },
